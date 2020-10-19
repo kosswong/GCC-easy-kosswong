@@ -3,14 +3,13 @@ def findMaxProfit(numOfPredictedTimes, predictedSharePrices):
     # Participants code will be here
     maxi = 0   
     n = numOfPredictedTimes
-    for k in range(2, n):
+    for k in range(1, n):
         profit = [[0 for i in range(n + 1)]  
                      for j in range(k + 1)]  
       
         # Fill the table in bottom-up fashion  
         for i in range(1, k + 1):  
             prevDiff = float('-inf') 
-              
             for j in range(1, n):  
                 prevDiff = max(prevDiff, 
                                profit[i - 1][j - 1] - 

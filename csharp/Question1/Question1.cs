@@ -20,7 +20,13 @@ namespace Solution
         // You may change this function parameters
         static int FindMaxProfit(int numOfPredictedDays, int[] predictedSharePrices)
         {
-            return -1;
+            List<int> allMoney = new List<int>();
+            for(int i=0;i<numOfPredictedDays;i++){
+                for(int j=i+2; j < numOfPredictedDays; j++){
+                    allMoney.Add(predictedSharePrices[j]-predictedSharePrices[i]);
+                }
+            }
+            return allMoney.Max();
         }
 
         static void Main(string[] args)

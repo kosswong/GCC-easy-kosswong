@@ -1,7 +1,8 @@
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 
 class Solution
 {
@@ -11,10 +12,8 @@ class Solution
         //Participants will add code here
         string stringToReturn = "";
         for(int k = 0; k < profits.Count; k++){
-            if(k != 0) 
-                stringToReturn = stringToReturn + ",";
             int iOfMinj = 0;
-            int minj = 100000000;
+            int minj = 100001;
             for(int i = 0; i < n; i++){
                 for(int j = i+1; j < n; j++){
                     if(prices[j]-prices[i] == profits[k]){
@@ -27,7 +26,11 @@ class Solution
                 }
             }
             //Console.WriteLine("Ha: {0} {1} {2} {3} {4} {5}", prices[iOfMinj], prices[minj], prices[minj]-prices[iOfMinj], iOfMinj+1, minj+1, profits[k]);
-            stringToReturn = stringToReturn + (iOfMinj+1) + " " + (minj+1);
+            if(minj != 100001){
+                if(k > 0) 
+                    stringToReturn = stringToReturn + ",";
+                stringToReturn = stringToReturn + (iOfMinj+1) + " " + (minj+1);
+            }
         }
         return stringToReturn;
     }

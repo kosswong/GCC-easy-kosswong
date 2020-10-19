@@ -43,6 +43,7 @@ namespace Solution
                         sum[i, j] = Math.Max(sum[i, j - 1], max_so_far); 
                     } 
                 } 
+                
                 max = sum[start, numOfPredictedTimes - 1] > max ? sum[start, numOfPredictedTimes - 1] : max;
             }
             return max; 

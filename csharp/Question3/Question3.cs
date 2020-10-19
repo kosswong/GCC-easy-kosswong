@@ -30,11 +30,14 @@ class Solution
                 if(k > 0) 
                     stringToReturn = stringToReturn + ",";
                 stringToReturn = stringToReturn + (iOfMinj+1) + " " + (minj+1);
+            }else{
+                if(k > 0) 
+                    stringToReturn = stringToReturn + ",";
+                stringToReturn = stringToReturn + "-1";
             }
         }
         return stringToReturn;
     }
-
 
     static void Main(String[] args)
     {

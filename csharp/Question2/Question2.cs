@@ -19,10 +19,34 @@ namespace Solution
     {
 
         // You may change this function parameters
+        
         static int FindMaxProfit(int numOfPredictedTimes, int[] predictedSharePrices)
         {
             // Participant's code will go here
-            return -1;
+
+            int max = 0;
+            for(int start = 2; start < numOfPredictedTimes; start++){
+                int[, ] sum = new int[start + 1, numOfPredictedTimes + 1]; 
+          
+                for (int i = 0; i <= start; i++) 
+                    sum[i, 0] = 0; 
+          
+                for (int j = 0; j <= numOfPredictedTimes; j++) 
+                    sum[0, j] = 0; 
+          
+                for (int i = 1; i <= start; i++) { 
+                    for (int j = 1; j < numOfPredictedTimes; j++) { 
+                        int max_so_far = 0; 
+                        for (int m = 0; m < j; m++) 
+                        max_so_far = Math.Max(max_so_far, predictedSharePrices[j] - 
+                                       predictedSharePrices[m] + sum[i - 1, m]); 
+                        sum[i, j] = Math.Max(sum[i, j - 1], max_so_far); 
+                    } 
+                } 
+                max = sum[start, numOfPredictedTimes - 1] > max ? sum[start, numOfPredictedTimes - 1] : max;
+            }
+            return max; 
+
         }
 
         static void Main(string[] args)

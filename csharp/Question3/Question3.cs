@@ -14,7 +14,7 @@ class Solution
             if(k != 0) 
                 stringToReturn = stringToReturn + ",";
             int iOfMinj = 0;
-            int minj = 2147483647;
+            int minj = 100000000;
             for(int i = 0; i < n; i++){
                 for(int j = i+1; j < n; j++){
                     if(prices[j]-prices[i] == profits[k]){

@@ -25,7 +25,7 @@ namespace Solution
             // Participant's code will go here
 
             int max = 0;
-            for(int start = 2; start < numOfPredictedTimes; start++){
+            for(int start = 2; start < numOfPredictedTimes-2; start++){
                 int[, ] sum = new int[start + 1, numOfPredictedTimes + 1]; 
           
                 for (int i = 0; i <= start; i++) 

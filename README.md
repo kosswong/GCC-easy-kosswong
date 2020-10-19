@@ -1,4 +1,4 @@
-# TA Coding Challenge 2020
+# Global Coding Challenge 2020
 
 Hello Global Coding Challenge Contestants,
 
@@ -14,9 +14,9 @@ This repository sets out files that should be added to your skeleton repositorie
 
 Each contains a skeleton repository for their respective language.
 
-If there are any questions, you can get in touch with us using the help page at https://global-coding-challenge.herokuapp.com/#/help. 
+If there are any questions, you can get in touch with us using the help page at https://www.credit-suisse.com/pwp/hr/en/codingchallenge/#/help. 
 
-In the meantime, we wish you all the best of luck as you attempt to be crowned the Global TA Coding Champion!
+In the meantime, we wish you all the best of luck as you attempt to be crowned the Global Coding Champion!
 
 Kind Regards
 

@@ -22,7 +22,8 @@ namespace Solution
         {
             List<int> allMoney = new List<int>();
             for(int i=0;i<numOfPredictedDays;i++){
-                for(int j=i+2; j < numOfPredictedDays; j++){
+                for(int j=i+1; j < numOfPredictedDays; j++){
+                    
                     allMoney.Add(predictedSharePrices[j]-predictedSharePrices[i]);
                 }
             }

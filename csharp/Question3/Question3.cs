@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
 class Solution
 {
 
@@ -17,7 +18,7 @@ class Solution
             for(int i = 0; i < n; i++){
                 for(int j = i+1; j < n; j++){
                     if(prices[j]-prices[i] == profits[k]){
-                        if(j < minj){
+                        if(j <= minj){
                             iOfMinj = i;
                             minj = j;
                         }

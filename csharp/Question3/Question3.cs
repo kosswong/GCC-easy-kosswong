@@ -22,6 +22,7 @@ class Solution
                             minj = j;
                         }
                         //Console.WriteLine("{0} {1} {2} {3} {4} {5}", prices[i], prices[j], prices[j]-prices[i], i+1, j+1, profits[k]);
+                        
                     }
                 }
             }

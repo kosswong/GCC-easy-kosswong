@@ -20,6 +20,7 @@ class Solution
                         if(j <= minj){
                             iOfMinj = i;
                             minj = j;
+                            
                         }
                     }
                 }

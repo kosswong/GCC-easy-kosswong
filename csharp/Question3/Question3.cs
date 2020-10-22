@@ -14,18 +14,14 @@ class Solution
         for(int k = 0; k < profits.Count; k++){
             int iOfMinj = 0;
             int minj = 100001;
-            for(int i = 0; i < n; i++){
-                for(int j = i+1; j < n; j++){
-                    if(prices[j]-prices[i] == profits[k]){
+            for(int i = 0; i < n; i++)
+                for(int j = i+1; j < n; j++)
+                    if(prices[j]-prices[i] == profits[k])
                         if(j <= minj){
                             iOfMinj = i;
                             minj = j;
                         }
-                        //Console.WriteLine("{0} {1} {2} {3} {4} {5}", prices[i], prices[j], prices[j]-prices[i], i+1, j+1, profits[k]);
                     }
-                }
-            }
-            //Console.WriteLine("Ha: {0} {1} {2} {3} {4} {5}", prices[iOfMinj], prices[minj], prices[minj]-prices[iOfMinj], iOfMinj+1, minj+1, profits[k]);
             if(minj != 100001){
                 if(k > 0) 
                     stringToReturn = stringToReturn + ",";

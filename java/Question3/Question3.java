@@ -41,6 +41,7 @@ class Solution {
                     }
                 }
             }
+            
             if(minj != 100001){
                 if(k > 0) 
                     stringToReturn = stringToReturn + ",";

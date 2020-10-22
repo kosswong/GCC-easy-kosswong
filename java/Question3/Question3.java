@@ -18,17 +18,40 @@ class Solution {
             for (int j = 0; j < d; j++) {
                 profit[j] = scanner.nextInt();
             }
-            answer = findMinDays(values,profit);
+            answer = findMinDays(n, d, values,profit);
             // Do not remove below line
             System.out.println(answer);
             // Do not print anything after this line
         }
     }
 
-    public static String findMinDays(int[] values, int[] profit) {
+    public static String findMinDays(int n, int d, int[] prices, int[] profits) {
 
-        // Participant's code will go here
-        return "";
+        String stringToReturn = "";
+        for(int k = 0; k < profits.length; k++){
+            int iOfMinj = 0;
+            int minj = 100001;
+            for(int i = 0; i < n; i++){
+                for(int j = i+1; j < n; j++){
+                    if(prices[j]-prices[i] == profits[k]){
+                        if(j <= minj){
+                            iOfMinj = i;
+                            minj = j;
+                        }
+                    }
+                }
+            }
+            if(minj != 100001){
+                if(k > 0) 
+                    stringToReturn = stringToReturn + ",";
+                stringToReturn = stringToReturn + (iOfMinj+1) + " " + (minj+1);
+            }else{
+                if(k > 0) 
+                    stringToReturn = stringToReturn + ",";
+                stringToReturn = stringToReturn + "-1";
+            }
+        }
+        return stringToReturn;
 
     }
 }

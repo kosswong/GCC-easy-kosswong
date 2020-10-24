@@ -2,7 +2,6 @@
 using namespace std;
 string find_min_days(int profit[], int price[], int n, int d)
 {
-	//Participants will add code here
         string stringToReturn = "";
         for(int k = 0; k < d; k++){
             int iOfMinj = 0;

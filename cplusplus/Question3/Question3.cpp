@@ -4,8 +4,6 @@ string find_min_days(int profit[], int price[], int n, int d)
 {
 	//Participants will add code here
         string stringToReturn = "";
-        if(n > 100000) n = 100000;
-        if(d > 10) d = 10;
         for(int k = 0; k < d; k++){
             int iOfMinj = 0;
             int minj = 100001;

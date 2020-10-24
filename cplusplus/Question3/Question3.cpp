@@ -9,16 +9,13 @@ string find_min_days(int profit[], int price[], int n, int d)
         for(int k = 0; k < d; k++){
             int iOfMinj = 0;
             int minj = 100001;
-            for(int i = 0; i < n; i++){
-                for(int j = i+1; j < n; j++){
-                    if(price[j]-price[i] == profit[k]){
+            for(int i = 0; i < n; i++)
+                for(int j = i+1; j < n; j++)
+                    if(price[j]-price[i] == profit[k])
                         if(j <= minj){
                             iOfMinj = i;
                             minj = j;
                         }
-                    }
-                }
-            }
             if(minj != 100001){
                 if(k > 0)
                     stringToReturn = stringToReturn + ",";

@@ -1,21 +1,8 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
-int findMaxProfit(int numOfPredictedDays, vector<int> predictedSharePrices) {
-    
-    int max = -1;
-    for(int i=0;i < numOfPredictedDays;i++){
-        for(int j=i+1; j < numOfPredictedDays; j++){
-            if(predictedSharePrices[j]-predictedSharePrices[i] > max){
-                max = predictedSharePrices[j]-predictedSharePrices[i];
-            }
-        }
-    }
-    
-    return max;
+int findMaxProfit(int n, vector<int> p) {
+    int max = -1; for(int i=0;i < n;i++)for(int j=i+1; j < n; j++)if(p[j]-p[i] > max)max = p[j]-p[i]; return max;
 }
-
 vector<int> splitStringToInt(const string& str, char delim) {
     vector<int> strings;
     size_t start;
@@ -26,28 +13,18 @@ vector<int> splitStringToInt(const string& str, char delim) {
     }
     return strings;
 }
-
 void printVector(vector<int> vec) {
-    for (vector<int>::const_iterator i = vec.begin(); i != vec.end(); ++i) {
+    for (vector<int>::const_iterator i = vec.begin(); i != vec.end(); ++i)
         cout << *i << ' ';
-    }
     cout << endl;
 }
-
 int main() {
     string firstLine;
     getline(cin, firstLine);
-
     vector<int> firstLineVec = splitStringToInt(firstLine, ' ');
     int numOfPredictedDays = firstLineVec[0];
     vector<int> predictedSharePrices(firstLineVec.begin()+1, firstLineVec.end());
-
-
     int result = findMaxProfit(numOfPredictedDays, predictedSharePrices);
-
-    // Do not remove this line
     cout << result << "\n";
-    // Do not print anything after this line
-
     return 0;
 }
